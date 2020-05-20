@@ -1,0 +1,23 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.profileImage {
+    max-width: 60vw;
+    max-height: 60vh;
+    border-radius: 25%;
+    object-fit: contain;
+}
+
+.animateProfileImage {
+    opacity: 0;
+    transform: translateY(10em) scale(0.8, 0.8);
+    transition: opacity 0.5s ease-out,
+                transform 1s cubic-bezier(0,.30,0,1);
+}
+
+.animateProfileImageIn {
+    opacity: 1;
+    transform: none;
+}

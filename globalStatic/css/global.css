@@ -1,0 +1,59 @@
+body {
+    font-family: "Oxygen", Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    background-color: rgb(245,245,245);
+    box-shadow: 0 5px 6px 0px #AAA;
+}
+
+.navbar .navbar-nav li a {
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    color: #777777;
+}
+
+.navbar .navbar-nav li #currentPage {
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+.navbar .navbar-nav li a:hover {
+    color: #000;
+}
+
+.navbar .navbar-brand {
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #0a2463;
+}
+
+.sectionHeight {
+    width: 100%;
+    height: 95vh;
+    overflow: hidden;
+}
+
+.minimalBtn {
+    background-color: transparent;
+}
+
+.minimalBtn:hover {
+    background-color: #eeeeee;
+}
+
+.animateUp {
+    opacity: 0;
+    transform: translateY(75px);
+}
+
+.animateRight {
+    opacity: 0;
+    transform: translateX(-75px);
+}
+
+.animateIn {
+    opacity: 1;
+    transform: none;
+    transition: transform 1s cubic-bezier(0,.1,0,1),
+                opacity .5s ease;
+}

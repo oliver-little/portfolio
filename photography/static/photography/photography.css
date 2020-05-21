@@ -1,4 +1,4 @@
-.introHeight {
+.introContainer {
     height: 50vh;
     overflow: hidden;
 }
@@ -25,12 +25,11 @@
 }
 
 .imageContainer {
+    padding-top: 1.5em;
     position: relative;
 }
 
 .image {
-    padding-top: 0.75em;
-    padding-bottom: 0.75em;
     width: 100%;
     height: auto;
     filter: brightness(100%);
@@ -57,9 +56,6 @@
 }
 
 #photos {
-    /* Prevent vertical gaps */
-    line-height: 0;
-    
     -webkit-column-count: 4;
     -webkit-column-gap:   0px;
     -moz-column-count:    4;

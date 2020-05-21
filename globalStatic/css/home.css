@@ -3,12 +3,129 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
 
+.wideContainer {
+    max-width: 90%;
+}
 .profileImage {
-    max-width: 60vw;
-    max-height: 60vh;
-    border-radius: 25%;
+    max-width: 90%;
+    max-height: 70vh;
+    border-radius: 30%;
     object-fit: contain;
 }
+
+.align-left-md {
+    margin-left: 5%;
+}
+
+@media (min-width: 1200px) {
+    .align-left-md {
+        margin-left: 15%;
+    }
+}
+
+@media (max-width: 767px) { 
+    .align-center-sm {
+        justify-content: center;
+    }
+}
+
+.hide {
+    opacity: 0;
+    transform: translateY(-4em);
+    transition: opacity 0.5s ease-out,
+                transform 0.5s ease-out;
+}
+
+.slide2text {
+    color: #F7F4F3;
+}
+
+@media (min-width: 768px) {
+    .largeParagraph {
+        max-width: 25vw;
+    }
+}
+
+@media (max-width: 768px) { 
+    .largeParagraph {
+        max-width: 90vw;
+    }
+}
+
+.highlightSquare {
+    position: relative;
+    height: 125px;
+    width: 125px;
+    margin: 0 auto;
+    
+}
+
+.rotateSquare {
+    position: absolute;
+    background-color: white;
+    height: 0%;
+    width: 0%;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    margin:auto;
+    border-radius: 75px;
+    transform-origin: center;
+    transform: rotateZ(450deg);
+}
+
+.rotateSquare.anim {
+    animation: highlightSquareRotateAnimation 1.5s forwards;
+}
+
+.fillSquare {
+    position: absolute;
+    background-color: var(--slide2color);
+    height: 0%;
+    width: 0%;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    margin:auto;
+    border-radius: 70px;
+}
+
+.fillSquare.anim {
+    animation: highlightSquareFillAnimation 1.5s forwards;
+}
+
+.highlightContent > span {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; 
+    font-size: 30px;
+    
+}
+
+.highlightContent > p {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.9em;
+    text-align: center;
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+}
+
+.highlightContent {
+    opacity: 0;
+    transition: opacity 0s 0.75s linear;
+}
+
+.highlightContent.anim {
+    opacity: 1;
+}
+
+/* Animations */
 
 .animateProfileImage {
     opacity: 0;
@@ -20,4 +137,69 @@ h1, h2, h3, h4, h5, h6 {
 .animateProfileImageIn {
     opacity: 1;
     transform: none;
+    animation: idleProfileAnimation 20s infinite;
+    animation-delay: 2s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes idleProfileAnimation {
+    0% {
+        transform: none;
+    }
+    33% {
+        transform: translateY(1em);
+    }
+    66% {
+        transform: translateY(-1em);
+    }
+    100% {
+        transform: none;
+    }
+}
+
+@keyframes highlightSquareRotateAnimation {
+    0% {
+        border-radius: 0px;
+        height: 0%;
+        width: 0%;
+        transform: none;
+    }
+    66% {
+        border-radius: 15px;
+        height: 100%;
+        width: 100%;
+        transform: rotateZ(450deg);
+    }
+    100% {
+        border-radius: 75px;
+        height: 100%;
+        width: 100%;
+        transform: rotateZ(450deg);
+    }
+}
+
+@keyframes highlightSquareFillAnimation {
+    66% {
+        height: 0%;
+        width: 0%;
+    }
+    90% {
+        height: 90%;
+        width: 90%;
+    }
+    100% {
+        height: 90%;
+        width: 90%;
+    }
+}
+@keyframes highlightSquareContentAnimation {
+    65% {
+        opacity: 0;
+    }
+    66% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
 }

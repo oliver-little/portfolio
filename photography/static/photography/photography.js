@@ -1,6 +1,7 @@
 window.onload = doStuff
 
 function doStuff() {
+    // Initial animation (animate title, subtitle and photos in right order)
     var title = $("#mainTitle");
     var subTitle = $("#subTitle");
     var photoDiv = $("#photos");
@@ -8,7 +9,7 @@ function doStuff() {
     if (document.scrollingElement.scrollTop < 150) {
   
         setTimeout(function() {subTitle.addClass('animateIn');}, 300);
-        setTimeout(function() {photoDiv.addClass('animateIn');}, 1000);
+        setTimeout(function() {photoDiv.addClass('animateIn');}, 700);
     }
     else {
         subTitle.addClass('animateIn');
@@ -27,11 +28,13 @@ function doStuff() {
     }
     );*/
 
+    // Animate to top of page when scroll button pressed.
     $("#scrollBtn").click(function() {
         $("html, body").animate({
             scrollTop: 0}, 1500);
     });
 
+    // Code to load image modal correctly (set image src)
     $("#imageModal").on("show.bs.modal", function(event) {
         var target = $(event.relatedTarget);
         var image = target.data("image");

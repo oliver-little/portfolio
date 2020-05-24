@@ -3,7 +3,7 @@
 
 {% block header %}
 <title>Oliver Little</title>
-<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" href="{% static 'home/home.css' %}">
 <script src="{% static 'home/home.js' %}"></script>
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 {% endblock %}
@@ -12,17 +12,22 @@
 <!-- navbar info -->
 <nav class="navbar navbar-expand-sm fixed-top p-2 pl-3">
     <a class="navbar-brand" href="#">Oliver Little</a>
-    <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" href="#" id="currentPage"><b>About</b></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'photographyHome' %}">Photography</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Blog</a>
-        </li>
-    </ul>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerTarget">
+        <span class="fa fa-bars"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerTarget">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="currentPage">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'photographyHome' %}"><b>Photography</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Blog</a>
+            </li>
+        </ul>
+    </div>
 </nav>
 <div class="backgroundContainer screenSection" id="particles-js"> <!-- Particles container-->
     <div class="d-flex align-items-center foregroundContainer"> <!-- Container to centre text and image-->
@@ -53,7 +58,7 @@
 <div class="d-flex align-items-center justify-content-center screenSection" style="background-color: var(--aboutBackground);">
     <div class="container wideContainer">
         <div class="row align-items-center justify-content-between">
-            <div class="col-12 col-lg-6 col-xl-5 aboutText largeParagraph m-3">
+            <div class="col-12 col-lg-6 col-xl-5 aboutText largeParagraph mt-3">
                 <h1 class="animateRight" id="aboutTitle">About</h1>
                 <div>
                     <p class="animateRight" style="line-height: 2rem;" id="aboutPara">I'm currently a student at the University of Birmingham studying Computer Science on a Degree Apprenticeship supported by PwC.
@@ -62,7 +67,7 @@
                     In my free time, I'm an avid Guitarist, but I also enjoy taking photos, running and cycling.</p>
                 </div>
             </div>
-            <div class="col-12 col-lg-4 col-xl-6">
+            <div class="col-12 col-lg-4 col-xl-6 mb-3">
                 <div class="row">
                     <div class="col-12 col-sm-4 col-lg-12 col-xl-4 d-flex justify-content-center">
                         <div class="highlightSquare my-3 p-3">

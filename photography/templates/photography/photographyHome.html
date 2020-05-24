@@ -11,17 +11,22 @@
 {% block content %}
 <nav class="navbar navbar-expand-sm fixed-top p-2 pl-3">
     <a class="navbar-brand" href="{% url 'landingPage' %}">Oliver Little</a>
-    <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'landingPage' %}">About</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#" id="currentPage"><b>Photography</b></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Blog</a>
-        </li>
-    </ul>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerTarget">
+        <span class="fa fa-bars"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerTarget">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'landingPage' %}">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="currentPage"><b>Photography</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Blog</a>
+            </li>
+        </ul>
+    </div>
 </nav>
 <div style="height: 6vh;"></div>
 <div class="d-flex flex-column justify-content-center align-items-center introContainer">

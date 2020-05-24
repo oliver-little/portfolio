@@ -11,10 +11,10 @@
 {% block content %}
 <!-- navbar info -->
 <nav class="navbar navbar-expand-sm fixed-top p-2 pl-3">
-    <a class="navbar-brand">Oliver Little</a>
+    <a class="navbar-brand" href="#">Oliver Little</a>
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" href="#" id="currentPage"><u>About</u></a>
+            <a class="nav-link" href="#" id="currentPage"><b>About</b></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{% url 'photographyHome' %}">Photography</a>
@@ -24,80 +24,113 @@
         </li>
     </ul>
 </nav>
-<div class="scrollContainer" id="scrollDiv">
-    <div class="backgroundContainer screenSection stackingSlide" id="particles-js"> <!-- Particles container-->
-        <div class="d-flex align-items-center foregroundContainer"> <!-- Container to centre text and image-->
-            <div class="container wideContainer">
-                <div class="row align-items-center align-left-md">
-                    <div class="col-xs-12 col-md-5">
-                        <div class="row align-center-sm">
-                            <h1 class="animateRight" id="mainTitle">Oliver Little</h1>
-                        </div> 
-                        <div class="row align-center-sm subTitle animateRight">
-                            <p class="m-0">- Computer Scientist</p>
-                        </div>
-                        <div class="row align-center-sm subTitle animateRight">
-                            <p class="m-0">- University of Birmingham</p>
-                        </div>
-                        <div class="row align-center-sm subTitle animateRight">
-                            <p class="m-0">- PwC Technology Degree Apprentice</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 d-none d-md-block">
-                        <img src="https://i.imgur.com/tf0JYiRh.jpg" class="profileImage animateProfileImage" id="profile">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="d-flex align-items-center justify-content-center" style="background-color: var(--slide2color);">
+<div class="backgroundContainer screenSection" id="particles-js"> <!-- Particles container-->
+    <div class="d-flex align-items-center foregroundContainer"> <!-- Container to centre text and image-->
         <div class="container wideContainer">
-            <div class="row align-items-center">
-                <div class="col-xs-12 col-lg-5 slide2text largeParagraph m-3">
-                    <h1 class="slide2text animateRight" id="aboutTitle">About</h1>
-                    <div>
-                        <p class="animateRight" style="line-height: 2rem;" id="aboutPara">I'm currently a student at the University of Birmingham studying Computer Science, on a Degree Apprenticeship supported by PwC.
-                        At the moment I'm most interested in learning more about Cyber Security and Artificial Intelligence.
-                        <br><br>While I'm at University, I regularly visit the local climbing centre, and enjoy events like Hackathons held by the Computer Science Society.
-                        In my free time, I'm an avid Guitarist, but I also enjoy taking photos, running and cycling.</p>
+            <div class="row align-items-center align-left-md">
+                <div class="col-12 col-md-5" style="color: var(--aboutBackground);">
+                    <div class="row align-center-sm">
+                        <h1 class="animateRight" id="mainTitle">Oliver Little</h1>
+                    </div> 
+                    <div class="row align-center-sm subTitle animateRight">
+                        <p class="m-0">- Computer Scientist</p>
+                    </div>
+                    <div class="row align-center-sm subTitle animateRight">
+                        <p class="m-0">- University of Birmingham</p>
+                    </div>
+                    <div class="row align-center-sm subTitle animateRight">
+                        <p class="m-0">- PwC Technology Degree Apprentice</p>
                     </div>
                 </div>
-                <div class="col-md-2 d-none d-md-block align-items-center">
-                    <div class="highlightSquare slide2text m-3">
-                        <div class="rotateSquare"></div>
-                        <div class="fillSquare"></div>
-                        <div class="highlightContent">
-                            <span class="fa fa-desktop"></span>
-                            <p class="slide2text">Computer Science</p>
-                        </div>
-                    </div>
+                <div class="col-md-6 d-none d-md-block">
+                    <img src="https://i.imgur.com/tf0JYiRh.jpg" class="profileImage animateProfileImage" id="profile">
                 </div>
-                <div class="col-md-2 d-none d-md-block align-items-center">
-                    <div class="highlightSquare slide2text m-3">
-                        <div class="rotateSquare"></div>
-                        <div class="fillSquare"></div>
-                        <div class="highlightContent">
-                            <span class="fa fa-shield"></span>
-                            <p class="slide2text">Cyber Security</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2 d-none d-md-block align-items-center">
-                    <div class="highlightSquare slide2text m-3">
-                        <div class="rotateSquare"></div>
-                        <div class="fillSquare"></div>
-                        <div class="highlightContent">
-                            <span class="fa fa-cogs"></span>
-                            <p class="slide2text">Artificial Intelligence</p>
-                        </div>
-                    </div>
-                </div> 
             </div>
         </div>
     </div>
-    <div class="d-flex" style="background-color: #FFFFFF;">
-        <h1 class=""> beep </h1>
+</div>
+
+<div class="d-flex align-items-center justify-content-center screenSection" style="background-color: var(--aboutBackground);">
+    <div class="container wideContainer">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-12 col-lg-6 col-xl-5 aboutText largeParagraph m-3">
+                <h1 class="animateRight" id="aboutTitle">About</h1>
+                <div>
+                    <p class="animateRight" style="line-height: 2rem;" id="aboutPara">I'm currently a student at the University of Birmingham studying Computer Science on a Degree Apprenticeship supported by PwC.
+                    At the moment I'm most interested in learning more about Cyber Security and Artificial Intelligence.
+                    <br><br>While I'm at University, I regularly visit the local climbing centre, and enjoy events like Hackathons held by the Computer Science Society.
+                    In my free time, I'm an avid Guitarist, but I also enjoy taking photos, running and cycling.</p>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4 col-xl-6">
+                <div class="row">
+                    <div class="col-12 col-sm-4 col-lg-12 col-xl-4 d-flex justify-content-center">
+                        <div class="highlightSquare my-3 p-3">
+                            <div class="rotateSquare"></div>
+                            <div class="fillSquare"></div>
+                            <div class="highlightContent aboutText">
+                                <span class="fa fa-desktop"></span>
+                                <p class="slide2text">Computer Science</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4 col-lg-12 col-xl-4 d-flex justify-content-center">
+                        <div class="highlightSquare my-3 p-3">
+                            <div class="rotateSquare"></div>
+                            <div class="fillSquare"></div>
+                            <div class="highlightContent aboutText">
+                                <span class="fa fa-shield"></span>
+                                <p class="slide2text">Cyber Security</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4 col-lg-12 col-xl-4 d-flex justify-content-center">
+                        <div class="highlightSquare my-3 p-3">
+                            <div class="rotateSquare"></div>
+                            <div class="fillSquare"></div>
+                            <div class="highlightContent aboutText">
+                                <span class="fa fa-cogs"></span>
+                                <p class="slide2text">Artificial Intelligence</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+<div class="d-flex flex-column align-items-center justify-content-center screenSection" style="background-color: var(--contactBackground);">
+    <h1 class="animateUp my-5" id="contactTitle">Contact</h1>
+    <div class="container wideContainer">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-12 col-md-4 my-2" style="text-align: center;">
+                <div class="contactButtonContainer">
+                    <a class="btn contactButton animateOpacity" href="https://github.com/oliver-little">
+                        <div class="row justify-content-center contactButtonContent">
+                            <span class="fa fa-github mx-2"></span>
+                            <p class="ml-3 mb-0">GitHub</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 my-2" style="text-align: center;">
+                <a class="btn contactButton animateOpacity" href="mailto:oliver.little12@gmail.com">
+                    <div class="row justify-content-center contactText">
+                        <span class="fa fa-envelope mx-2"></span>
+                        <p class="ml-3 mb-0">Mail</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-md-4 my-2" style="text-align: center;">
+                <a class="btn contactButton animateOpacity" href="https://www.linkedin.com/in/oliver-little/">
+                    <div class="row justify-content-center contactText">
+                        <span class="fa fa-linkedin-square mx-2"></span>
+                        <p class="ml-3 mb-0">LinkedIn</p>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}

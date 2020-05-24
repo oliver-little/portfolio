@@ -1,13 +1,6 @@
 window.onload = doStuff
 
-var lastScrollPos = 0;
 function doStuff() {
-    // Update scrollPos if it exists and user just refreshed (less than 1s since scrollPos stored)
-    var scrollPos = localStorage.getItem("scrollPos");
-    if (scrollPos && (Date.now() - localStorage.getItem("timeScroll")) < 1000) {
-        $("#scrollDiv").scrollTop(scrollPos);
-        localStorage.removeItem("scrollPos");
-    }
 
     // Animate main title with delay
     var title = $("#mainTitle");
@@ -26,26 +19,19 @@ function doStuff() {
 
     var particleCanvas = $(".particles-js-canvas-el");
     particleCanvas.css({
-        "position": "absolute",
+        "position": "fixed",
         "opacity": "0",
         "z-index": "-1"
     });
-    $(".particles-js-canvas-el").animate({
+    document.getElementsByClassName("particles-js-canvas-el")[0].setAttribute("height", window.innerHeight);
+
+    particleCanvas.animate({
         opacity: "1"
     }, 10000, "swing");
-
-
-    // Scroll snap uses a div so store this to restore it
-    $('#scrollDiv').on('scroll', function() {
-        lastScrollPos = this.scrollTop;
-    });
-
-    window.addEventListener("beforeunload", doBeforeUnloading);
 
     var aboutPageWaypoint = new Waypoint({
         element: $("#aboutTitle"),
         offset: "50%",
-        context: $("#scrollDiv"), // This page is entirely embedded inside a div, so have to set the scroller to use
         handler: function(direction) {
         $("#aboutTitle").addClass("animateIn");
         setTimeout(function() {$("#aboutPara").addClass("animateIn");}, 300);
@@ -57,20 +43,32 @@ function doStuff() {
                 rotator.classList.add("anim");
                 filler.classList.add("anim");
                 content.classList.add("anim");
-            }, (i*400)+600, rotators[i], fillers[i], content[i]);
+            }, (i*400)+1000, rotators[i], fillers[i], content[i]);
         }
         this.destroy();
     }
     });
-}
 
-// Hook into unload event to save current div scroll position to restore it
-function doBeforeUnloading() {
-    if (lastScrollPos != 0) {
-        this.localStorage.setItem("scrollPos", lastScrollPos);
-        this.localStorage.setItem("timeScroll", Date.now());
+    var contactPageWaypoint = new Waypoint({
+        element: $("#contactTitle"),
+        offset: "80%",
+        handler: function(direction) {
+        $("#contactTitle").addClass("animateIn");
+        var contacts = document.getElementsByClassName("contactButton");
+        for (var i = 0; i < contacts.length; i++) {
+            setTimeout(function(contact) {
+                contact.classList.add("animateIn");
+            }, (i*300)+600, contacts[i]);
+            setTimeout(function(contact) {
+                contact.classList.remove("animateOpacity");
+                contact.classList.remove("animateIn");
+                contact.classList.add("contactButtonHoverAnim");
+            }, (i*300)+1100, contacts[i]);
+
+        }
+        this.destroy();
     }
-    return null;
+    });
 }
 
 const particlesJSON = {

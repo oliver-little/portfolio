@@ -3,10 +3,10 @@ window.onload = doStuff
 function doStuff() {
     $("#blogPostModal").on("show.bs.modal", function(event) {
         var target = $(event.relatedTarget);
-        var pk = target.data("post-pk")
+        var slug = target.data("post-slug")
         $.ajax({
             type: "GET",
-            url: "posts/json/" + pk,
+            url: "posts/json/" + slug,
             dataType: "JSON",
             success: function(result) {
             var jsonResult = $.parseJSON(JSON.stringify(result));
@@ -15,7 +15,7 @@ function doStuff() {
 
             },
             error: function(result) {
-                window.location.href = "/posts/" + pk;
+                window.location.href = "/posts/" + slug;
             }
         });
     });

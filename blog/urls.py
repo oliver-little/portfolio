@@ -3,6 +3,6 @@ from . import views
 
 urlpatterns = [
     path("", views.blogHome, name="blogHome"),
-    path("posts/<int:pk>/", views.postDetail, name="postDetail"),
-    path("posts/json/<int:pk>/", views.postJSON),
+    path("posts/<slug:slug>/", views.postDetail, name="postDetail"),
+    path("posts/json/<slug:slug>/", views.postJSON),
 ]

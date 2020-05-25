@@ -2,6 +2,16 @@ body {
     font-family: "Oxygen", Arial, Helvetica, sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.introContainer {
+    height: 50vh;
+    overflow: hidden;
+}
+
 .navbar {
     background-color: rgb(245,245,245);
     box-shadow: 0 3px 10px 0px #888;
@@ -9,12 +19,13 @@ body {
 
 .navbar .navbar-nav li a {
     font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
-    color: #777777;
+    color: #777;
 }
 
 .navbar .navbar-nav li #currentPage {
     font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
     color: #333;
+    font-weight: bold;
 }
 
 .navbar .navbar-nav li a:hover {
@@ -44,7 +55,7 @@ body {
 }
 
 .minimalBtn:hover {
-    background-color: #eeeeee;
+    background-color: #eee;
 }
 
 .animateOpacity {

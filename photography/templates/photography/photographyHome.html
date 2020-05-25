@@ -20,17 +20,17 @@
                 <a class="nav-link" href="{% url 'landingPage' %}">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" id="currentPage"><b>Photography</b></a>
+                <a class="nav-link" href="#" id="currentPage">Photography</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
+                <a class="nav-link" href="{% url 'blogHome' %}">Blog</a>
             </li>
         </ul>
     </div>
 </nav>
 <div style="height: 6vh;"></div>
 <div class="d-flex flex-column justify-content-center align-items-center introContainer">
-    <h2 class="animateUp" id="mainTitle">A collection of my best photos.</h2>
+    <h1 class="animateUp" id="mainTitle">A collection of my best photos.</h1>
     <p class="animateUp" id="subTitle">Click to view full screen.</p>
 </div>
 <div class="container-fluid animateUp" id="photos"> 

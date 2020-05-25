@@ -1,4 +1,4 @@
-window.onload = doStuff
+window.onload = doStuff;
 
 function doStuff() {
 

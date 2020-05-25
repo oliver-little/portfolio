@@ -9,7 +9,6 @@
 {% endblock %}
 
 {% block content %}
-<!-- navbar info -->
 <nav class="navbar navbar-expand-sm fixed-top p-2 pl-3">
     <a class="navbar-brand" href="#">Oliver Little</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerTarget">
@@ -21,10 +20,10 @@
                 <a class="nav-link" href="#" id="currentPage">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'photographyHome' %}"><b>Photography</b></a>
+                <a class="nav-link" href="{% url 'photographyHome' %}">Photography</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
+                <a class="nav-link" href="{% url 'blogHome' %}">Blog</a>
             </li>
         </ul>
     </div>

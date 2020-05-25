@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+<link rel="stylesheet" href="{% static 'blog/blog.css' %}">
+<script src="{% static 'blog/blog.js' %}"></script>
+{% endblock  %}
+
+{% block content %}
+<nav class="navbar navbar-expand-sm fixed-top p-2 pl-3">
+    <a class="navbar-brand" href="#">Oliver Little</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerTarget">
+        <span class="fa fa-bars"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerTarget">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'landingPage' %}" >About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'photographyHome' %}">Photography</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="currentPage">Blog</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div style="height: 6vh;"></div>
+<div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 30vh;">
+    <h1>Blog Posts</h1>
+    <p>Ordered by most recent.</p>
+</div>
+<div class="container">
+    {% for post in posts %}
+    <a class="blogLink" data-target="#blogPostModal" data-toggle="modal" data-post-pk="{{post.pk}}" href="#blogPostModal">
+        <div class="blogPost mb-3 p-2">
+            <div class="row mb-2 justify-content-between">
+                <div class="col">
+                    <h3 class="blogTextColor">{{post.title}}</h3>
+                </div>
+                <div class="col text-right">
+                    <p class="blogTextColor">{{post.published_date|date:"d/m/Y"}}</p>
+                </div>
+            </div>
+            <p class="mb-0 blogTextColor"> {{ post.text|truncatewords:30|linebreaksbr }}</p>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+<div class="modal fade" id="blogPostModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="blogPostModalTitle"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="blogPostModalBody">
+        <p></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

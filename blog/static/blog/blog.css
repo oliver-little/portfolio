@@ -1,0 +1,22 @@
+a {
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    color: #292F36;
+    text-decoration: none;
+}
+
+.blogLink:hover {
+    color: #292F36;
+    text-decoration: none;
+}
+
+.blogPost {
+    border-radius: 5px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #292F36;
+    background-color: #292F36;
+}
+
+.blogTextColor {
+    color: #FFF;
+}

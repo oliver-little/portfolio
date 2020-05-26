@@ -1,6 +1,21 @@
 window.onload = doStuff
 
 function doStuff() {
+    var title = $("#mainTitle");
+    var subTitle = $("#subTitle");
+    var postDiv = $("#postDiv");
+    title.addClass("animateUp");
+    title.addClass('animateIn');
+    if (document.scrollingElement.scrollTop < 150) {
+  
+        setTimeout(function() {subTitle.addClass('animateIn');}, 300);
+        setTimeout(function() {postDiv.addClass('animateIn');}, 1000);
+    }
+    else {
+        subTitle.addClass('animateIn');
+        postDiv.addClass('animateIn');
+    }
+
     $("#blogPostModal").on("show.bs.modal", function(event) {
         var target = $(event.relatedTarget);
         var slug = target.data("post-slug")

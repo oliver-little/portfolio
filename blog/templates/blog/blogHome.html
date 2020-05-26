@@ -28,10 +28,10 @@
 </nav>
 <div style="height: 6vh;"></div>
 <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 30vh;">
-    <h1 id="mainTitle">Blog Posts</h1>
-    <p id="subTitle">Ordered by most recent.</p>
+    <h1 class="animateUp" id="mainTitle">Blog Posts</h1>
+    <p class="animateUp" id="subTitle">Ordered by most recent.</p>
 </div>
-<div class="container" id="postContainer">
+<div class="container animateOpacity" id="postDiv">
     {% for post in posts %}
     <a class="blogLink" data-target="#blogPostModal" data-toggle="modal" data-post-slug="{{post.slug}}" href="{% url 'postDetail' slug=post.slug %}">
         <div class="blogPost mb-3 p-2">
@@ -43,25 +43,25 @@
                     <p class="blogTextColor">{{post.published_date|date:"d/m/Y"}}</p>
                 </div>
             </div>
-            <p class="mb-0 blogTextColor"> {{ post.text|truncatewords:30|linebreaksbr }}</p>
+            <p class="mb-0 blogTextColor" style="line-height: 1.5rem;"> {{ post.text|truncatewords:30|linebreaksbr }}</p>
         </div>
     </a>
     {% endfor %}
 </div>
-<div class="modal fade" id="blogPostModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document" style="min-width: 60vw;">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="blogPostModalTitle"></h5>
-      </div>
-      <div class="modal-body" id="blogPostModalBody">
-        <p></p>
-      </div>
+<div class="modal fade pr-0" id="blogPostModal" tabindex="-1" role="dialog">
+    <button class="btn topRight" onclick="hideModal()">
+        <span class="fa fa-close" style="color: #FFFFFF; z-index: 2;"></span>
+    </button>
+    <div class="modal-dialog" role="document" style="min-width: 60vw;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="blogPostModalTitle"></h5>
+            </div>
+            <div class="modal-body" id="blogPostModalBody">
+                <p></p>
+            </div>
+        </div>
     </div>
-  </div>
-  <button class="btn topRight" onclick="hideModal()">
-      <span class="fa fa-close" style="color: #FFFFFF; z-index: 2;"></span>
-  </button>
 </div>
 
 {% endblock %}

@@ -5,8 +5,7 @@ function doStuff() {
     var title = $("#mainTitle");
     var subTitle = $("#subTitle");
     var photoDiv = $("#photos");
-    title.addClass("animateUp");
-    setTimeout(function(title) {title.addClass('animateIn');}, 1, title);
+    title.addClass('animateIn');
     if (document.scrollingElement.scrollTop < 150) {
   
         setTimeout(function() {subTitle.addClass('animateIn');}, 300);

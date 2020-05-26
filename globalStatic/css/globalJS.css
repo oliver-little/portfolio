@@ -1,0 +1,21 @@
+.animateOpacity {
+    opacity: 0;
+    transform: translateY(75px);
+}
+
+.animateUp {
+    opacity: 0;
+    transform: translateY(75px);
+}
+
+.animateRight {
+    opacity: 0;
+    transform: translateX(-75px);
+}
+
+.animateIn {
+    opacity: 1;
+    transform: none;
+    transition: transform 1s cubic-bezier(0,.1,0,1),
+                opacity .5s ease;
+}

@@ -6,6 +6,9 @@
 <link rel="stylesheet" href="{% static 'home/home.css' %}">
 <script src="{% static 'home/home.js' %}"></script>
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+loadJavaScriptCSS("{% static 'home/homeJS.css' %}")
+</script>
 {% endblock %}
 
 {% block content %}
@@ -70,8 +73,8 @@
                 <div class="row">
                     <div class="col-12 col-sm-4 col-lg-12 col-xl-4 d-flex justify-content-center">
                         <div class="highlightSquare my-3 p-3">
-                            <div class="rotateSquare"></div>
-                            <div class="fillSquare"></div>
+                            <div class="rotateSquare animEnabled"></div>
+                            <div class="fillSquare animEnabled"></div>
                             <div class="highlightContent aboutText">
                                 <span class="fa fa-desktop"></span>
                                 <p class="slide2text">Computer Science</p>
@@ -80,8 +83,8 @@
                     </div>
                     <div class="col-12 col-sm-4 col-lg-12 col-xl-4 d-flex justify-content-center">
                         <div class="highlightSquare my-3 p-3">
-                            <div class="rotateSquare"></div>
-                            <div class="fillSquare"></div>
+                            <div class="rotateSquare animEnabled"></div>
+                            <div class="fillSquare animEnabled"></div>
                             <div class="highlightContent aboutText">
                                 <span class="fa fa-shield"></span>
                                 <p class="slide2text">Cyber Security</p>
@@ -90,8 +93,8 @@
                     </div>
                     <div class="col-12 col-sm-4 col-lg-12 col-xl-4 d-flex justify-content-center">
                         <div class="highlightSquare my-3 p-3">
-                            <div class="rotateSquare"></div>
-                            <div class="fillSquare"></div>
+                            <div class="rotateSquare animEnabled"></div>
+                            <div class="fillSquare animEnabled"></div>
                             <div class="highlightContent aboutText">
                                 <span class="fa fa-cogs"></span>
                                 <p class="slide2text">Artificial Intelligence</p>

@@ -37,7 +37,7 @@
     <!--this applies a function to the url which checks if the image is an i.imgur.com image, at which point it appends the given thumbnail to the url -->
     {% for item in images %}
         <div class="imageContainer">
-            <a href="#imageModal" data-toggle="modal" data-target="#imageModal" data-image="{{item.url}}" data-camera="{{item.camera}}" data-lens="{{item.lens}}">
+            <a href="{{item.url}}" data-toggle="modal" data-target="#imageModal" data-image="{{item.url}}" data-camera="{{item.camera}}" data-lens="{{item.lens}}">
             <img src="{{item.url|appendImgurThumbnail:"l"}}" loading="lazy" class="image">
             <span class="selected fa fa-search-plus" style="color: #FFFFFF; margin-top: -25px; margin-left: -25px; font-size: 50px;"></span>
             </a>

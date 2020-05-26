@@ -20,3 +20,7 @@ function doStuff() {
         });
     });
 }
+
+function hideModal() {
+    $("#blogPostModal").modal("hide");
+}

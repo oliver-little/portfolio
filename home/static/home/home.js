@@ -62,7 +62,7 @@ function doStuff() {
             setTimeout(function(contact) {
                 contact.classList.remove("animateOpacity");
                 contact.classList.remove("animateIn");
-                contact.classList.add("contactButtonHoverAnim");
+                contact.classList.add("buttonHoverAnim");
             }, (i*300)+1100, contacts[i]);
 
         }

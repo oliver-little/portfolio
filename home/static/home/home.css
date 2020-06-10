@@ -123,7 +123,7 @@
     transform: none;
 }
 
-.contactButtonHoverAnim {
+.buttonHoverAnim {
     transition: background-color 0.3s ease-out,
                 transform 0.3s ease-in-out;
 }
@@ -158,3 +158,45 @@
     color: var(--contactBackground);
 }
 
+/* Remove this */
+
+.aboutButton {
+    position: relative;
+    border-radius: 10px;
+    border-width: 3px;
+    border-color: var(--aboutHighlight);
+    max-width: 150px;
+    width: 100%;
+    background-color: var(--aboutBackground);
+    transform: none;
+}
+
+.aboutButton > div > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    font-size: 100%;
+    backface-visibility: hidden;
+    transition: color 0.3s ease-out;
+}
+
+.aboutButton > div > p {
+    font-family: "Nunito Sans";
+    font-size: 100%;
+    font-weight: bold;
+    transition: color 0.3s ease-out;
+}
+
+.aboutButton:hover {
+    background-color: var(--aboutHighlight);
+    transform: translateY(-0.5em) scale(1.03);
+}
+
+.aboutButton:hover > div > span {
+    color: var(--aboutBackground);
+}
+
+.aboutButton:hover > div > p {
+    color: var(--aboutBackground);
+}

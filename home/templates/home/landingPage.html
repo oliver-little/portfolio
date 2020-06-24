@@ -5,7 +5,6 @@
 <title>Oliver Little</title>
 <link rel="stylesheet" href="{% static 'home/home.css' %}">
 <script src="{% static 'home/home.js' %}"></script>
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
 loadJavaScriptCSS("{% static 'home/homeJS.css' %}")
 </script>
@@ -31,7 +30,7 @@ loadJavaScriptCSS("{% static 'home/homeJS.css' %}")
         </ul>
     </div>
 </nav>
-<div class="backgroundContainer screenSection" id="particles-js"> <!-- Particles container-->
+<div class="backgroundContainer screenSection"> <!-- Particles container-->
     <div class="d-flex align-items-center foregroundContainer"> <!-- Container to centre text and image-->
         <div class="container wideContainer">
             <div class="row align-items-center align-left-md">
@@ -54,6 +53,9 @@ loadJavaScriptCSS("{% static 'home/homeJS.css' %}")
                 </div>
             </div>
         </div>
+    </div>
+    <div class="animateOpacity" style="position: absolute; top: 90%; left: 50%" id="arrowDown">
+        <span class="fa fa-arrow-down"></span>
     </div>
 </div>
 

@@ -41,6 +41,33 @@
                 transform 1s cubic-bezier(0,.30,0,1);
 }
 
+.animateDownArrowIn {
+    opacity: 1;
+    animation: downArrowAnimation 1.5s infinite;
+    animation-delay: 2s;
+    animation-timing-function: ease-in-out;
+    transition: opacity 0.5s ease-out;
+}
+
+@keyframes downArrowAnimation {
+     25% {
+         transform: none;
+         opacity: 1;
+     }
+     50% {
+        transform: translateY(1em);
+        opacity: 0;
+     }
+     51% {
+        transform: translateY(-1.5em);
+        opacity: 0;
+     }
+     75% {
+        transform: none;
+        opacity: 1;
+    }
+}
+
 @keyframes idleProfileAnimation {
     0% {
         transform: none;

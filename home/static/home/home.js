@@ -13,21 +13,21 @@ function doStuff() {
         delay += 250;
     }
     setTimeout(function() {$("#profile").addClass('animateProfileImageIn');}, delay+300);
+    setTimeout(function() {$("#arrowDown").addClass('animateDownArrowIn');}, delay+800);
 
-    // Particles
-    particlesJS("particles-js", particlesJSON);
-
-    var particleCanvas = $(".particles-js-canvas-el");
-    particleCanvas.css({
-        "position": "fixed",
-        "opacity": "0",
-        "z-index": "-1"
+    var downArrowWaypoint = new Waypoint({
+        element: $("#arrowDown"),
+        offset: "40%",
+        handler: function(direction) {
+            if (direction === "down") {
+                $("#arrowDown").removeClass('animateDownArrowIn');
+            }
+            else {
+                $("#arrowDown").addClass('animateDownArrowIn');
+            }
+        }
     });
-    document.getElementsByClassName("particles-js-canvas-el")[0].setAttribute("height", window.innerHeight);
 
-    particleCanvas.animate({
-        opacity: "1"
-    }, 10000, "swing");
 
     var aboutPageWaypoint = new Waypoint({
         element: $("#aboutTitle"),
@@ -69,47 +69,4 @@ function doStuff() {
         this.destroy();
     }
     });
-}
-
-const particlesJSON = {
-    "particles": {
-        "number": {
-            "value": 50,
-            "density": {
-            "enable": true,
-            "value_area": 700 // Denser the smaller the number.
-            }
-        },
-        "color": { // The color for every node, not the connecting lines.
-            "value": "#102e9c" // Or use an array of colors like ["#9b0000", "#001378", "#0b521f"]
-        },
-        "shape": {
-            "type": "circle", // Can show circle, edge (a square), triangle, polygon, star, img, or an array of multiple.
-        },
-        "opacity": {
-            "value": 0.5,
-            "random": true
-        },
-        "size": {
-            "value": 8,
-            "random": true
-        },
-        "line_linked": {
-            "enable": false,
-        },
-        "move": {
-            "enable": true,
-            "speed": 2,
-            "direction": "right", // Move them off the canvas, either "none", "top", "right", "bottom", "left", "top-right", "bottom-right" et cetera...
-            "random": true,
-            "straight": false, // Whether they'll shift left and right while moving.
-            "out_mode": "out", // What it'll do when it reaches the end of the canvas, either "out" or "bounce".
-            "bounce": false,
-            "attract": { // Make them start to clump together while moving.
-            "enable": false,
-            "rotateX": 600,
-            "rotateY": 1200
-            }
-        }
-    }
 }
